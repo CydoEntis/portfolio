@@ -1,0 +1,12 @@
+import { describe, expect, it } from "vitest";
+import { render } from "@testing-library/react";
+import { Home } from "./index";
+
+describe("Home", () => {
+  it("has a target for every nav link", () => {
+    const { container } = render(<Home />);
+    for (const id of ["work", "building", "about", "experience", "contact"]) {
+      expect(container.querySelector(`#${id}`), id).not.toBeNull();
+    }
+  });
+});

@@ -1,51 +1,24 @@
-# codystine.com — Portfolio 2025
+# portfolio
 
-Personal developer portfolio for Cody Stine — a full-stack developer specializing in .NET and React.
+Cody Stine's personal site: one dark page covering selected work, what's on
+the workbench, about, experience and contact.
 
-## Purpose
+## Develop
 
-This portfolio is designed to:
-
-- **Showcase real projects** — Full-stack applications and reusable .NET libraries, each with live demos and source code
-- **Demonstrate technical range** — From backend auth libraries to frontend app generators to CLI deployment tools
-- **Provide a clear professional profile** — Experience timeline, tech stack, and direct contact form
-- **Ship clean** — No bloat, no unused dependencies, no dead code
-
-## Tech Stack
-
-- **React 19** + **TypeScript** — UI layer
-- **Vite 7** — Build tooling
-- **TanStack Router** — File-based routing
-- **Tailwind CSS v4** — Styling with custom design tokens
-- **shadcn/ui** — Form primitives (Form, Input, Textarea, Sheet)
-- **EmailJS** — Contact form delivery
-- **Sonner** — Toast notifications
-
-## Project Structure
-
-```
-src/
-├── components/          # Shared UI (Header, Footer, FadeIn, SectionHeader, ThemeToggle)
-├── features/
-│   ├── hero/            # Landing section (badge, heading, CTA, social links)
-│   ├── skills/          # Tech stack display
-│   ├── experience/      # Work + education timeline
-│   ├── projects/        # Applications + packages with tabs
-│   └── contact/         # Contact form
-├── lib/                 # Utilities and shared constants
-├── routes/              # TanStack Router file-based routes
-└── styles.css           # Design tokens and theme variables
+```sh
+npm ci
+npm run dev      # http://localhost:3000
+npm run check    # typecheck, build and tests
 ```
 
-## Running Locally
+## Where things live
 
-```bash
-npm install
-npm run dev
-```
+- **Words and links:** `docs/CONTENT.md` is the source; `src/content/site.ts`
+  holds the same content as typed data the page renders. Change both together.
+- **Design:** `docs/design/README.md` is the spec (tokens, type, every
+  section). `docs/design/portfolio.dc.html` shows it rendered; keep
+  `support.js` beside it to open it.
+- **Sections:** one folder each under `src/features/`, with tests beside them.
+- **Images:** `public/projects/` and `public/about/`.
 
-## Building for Production
-
-```bash
-npm run build
-```
+Built with React, Vite, TanStack Router and Tailwind CSS.
