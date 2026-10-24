@@ -12,13 +12,13 @@ export default function Hero() {
     <header className="relative">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[900px] bg-[linear-gradient(rgba(236,232,222,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(236,232,222,.035)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:linear-gradient(#000_0%,transparent_90%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[900px] bg-[linear-gradient(color-mix(in_srgb,var(--color-text)_3.5%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--color-text)_3.5%,transparent)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:linear-gradient(#000_0%,transparent_90%)]"
       />
       <Container className="relative pt-[clamp(72px,12vw,150px)] pb-[clamp(56px,8vw,96px)]">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,520px),1fr))] items-center gap-12">
           <div className="min-w-0">
             <div data-reveal className="mb-7 flex items-center gap-2.5 font-mono text-[13px] text-muted">
-              <span className="size-[7px] rounded-full bg-lime shadow-[0_0_0_4px_rgba(196,240,66,.12)]" />
+              <span className="size-[7px] rounded-full bg-lime shadow-[0_0_0_4px_color-mix(in_srgb,var(--color-lime)_12%,transparent)]" />
               {IDENTITY.status}
             </div>
 

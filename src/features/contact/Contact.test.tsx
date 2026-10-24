@@ -8,7 +8,7 @@ function fillAndSend() {
   fireEvent.change(screen.getByLabelText("Name"), { target: { value: "Ada" } });
   fireEvent.change(screen.getByLabelText("Your email"), { target: { value: "ada@example.com" } });
   fireEvent.change(screen.getByLabelText("Message"), { target: { value: "Hello" } });
-  fireEvent.click(screen.getByRole("button", { name: "Send message →" }));
+  fireEvent.click(screen.getByRole("button", { name: "Send message" }));
 }
 
 function stubFetch(response: Promise<Response>) {
@@ -26,14 +26,15 @@ describe("Contact", () => {
 
   it("hides the form until it has an access key", () => {
     render(<Contact formKey="" />);
-    expect(screen.queryByRole("button", { name: "Send message →" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Send message" })).toBeNull();
   });
 
   it("sends the message to Web3Forms with the access key", async () => {
     const fetch = stubFetch(Promise.resolve(Response.json({ success: true })));
     render(<Contact formKey="key" />);
     fillAndSend();
-    expect(await screen.findByText("Thanks. Message sent. I'll reply soon.")).toBeTruthy();
+    const sent = await screen.findByText("Thanks. Message sent. I'll reply soon.");
+    expect(document.activeElement).toBe(sent);
     const [url, init] = fetch.mock.calls[0] as unknown as [string, RequestInit];
     expect(url).toBe("https://api.web3forms.com/submit");
     expect(JSON.parse(init.body as string)).toMatchObject({
@@ -61,13 +62,13 @@ describe("Contact", () => {
 
   it("links GitHub, LinkedIn and the résumé", () => {
     render(<Contact formKey="" />);
-    expect(screen.getByRole("link", { name: "GitHub ↗" }).getAttribute("href")).toBe(
+    expect(screen.getByRole("link", { name: "GitHub" }).getAttribute("href")).toBe(
       "https://github.com/CydoEntis",
     );
-    expect(screen.getByRole("link", { name: "LinkedIn ↗" }).getAttribute("href")).toBe(
+    expect(screen.getByRole("link", { name: "LinkedIn" }).getAttribute("href")).toBe(
       "https://www.linkedin.com/in/cody-stine-dev/",
     );
-    const resume = screen.getByRole("link", { name: "Résumé.pdf ↓" });
+    const resume = screen.getByRole("link", { name: "Résumé.pdf" });
     expect(resume.getAttribute("href")).toBe("/resume.pdf");
     expect(resume.hasAttribute("download")).toBe(true);
   });
