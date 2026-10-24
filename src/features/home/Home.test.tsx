@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-import { Home } from "./index";
+import Home from "./Home";
 
 describe("Home", () => {
   it("has a target for every nav link", () => {
