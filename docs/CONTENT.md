@@ -29,8 +29,9 @@ engine — wherever the idea runs best."
 Status dot colours: lime for open source / shipped / free, orange for in
 development.
 
-A project whose repo is private has **no GitHub link**. Its card shows no
-action link.
+scrib, linkables and Clip-It are paid apps: never link to their source.
+Their action link goes to the app's landing page. A project with no landing
+page yet has no action link.
 
 ### Featured (large cards, in this order)
 
@@ -58,7 +59,7 @@ action link.
 - Description: A fast, local-first desktop notebook that understands what you write: lists, running totals and unit conversions, all in plain text.
 - Tech: Tauri · React · TypeScript
 - Media: `/projects/scrib.webp`
-- Private repo: no action link
+- Action: "Visit site" → https://getscrib.com
 
 **linkables**
 - Type: Web app
@@ -66,15 +67,15 @@ action link.
 - Description: Save any link in seconds, find it later from any device, and share it when you need to.
 - Tech: React · Hono · Postgres
 - Media: none; use the icon tile with `/projects/linkables-icon.png`
-- Private repo: no action link
+- Action: none until the landing page is live
 
 **Clip-It**
 - Type: Browser extension
-- Status: Free (lime)
+- Status: Coming soon (orange)
 - Description: A Chrome extension that loads every ShopRite digital coupon in one click, checks each one actually saved, and can run on a schedule.
 - Tech: JavaScript · Chrome extension
 - Media: `/projects/clip-it.webp`
-- Private repo: no action link
+- Action: none until the landing page is live
 
 ### Earlier work (compact list under the cards)
 
