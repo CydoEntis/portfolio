@@ -10,12 +10,15 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/icons/cs.png">
 <style>
 html{scroll-behavior:smooth}
 body{margin:0;background:#0d0e0c;color:#ece8de;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:#c4f042;text-decoration:none}
 a:hover{color:#f0a05a}
 ::selection{background:#c4f042;color:#0d0e0c}
+a{transition:color .18s ease,background-color .18s ease,border-color .18s ease}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @keyframes cs-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 </style>
 </helmet>
@@ -28,35 +31,51 @@ a:hover{color:#f0a05a}
 <nav style="position:sticky;top:0;z-index:10;background:rgba(13,14,12,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #1f201c">
 <div style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
 <a href="#top" style="display:flex;align-items:center;gap:10px;color:#ece8de;font-weight:700;font-size:14px;letter-spacing:.08em">
-<span style="width:8px;height:8px;background:#c4f042;display:block"></span>CODY STINE</a>
+<img src="assets/icons/cs.png" alt="" style="width:22px;height:22px;display:block;image-rendering:pixelated">CODY STINE</a>
 <div style="display:flex;align-items:center;gap:4px;font-size:14px;flex-wrap:wrap">
-<a href="#work" style="color:#a9a59a;padding:6px 10px;border-radius:0" style-hover="color:#0d0e0c;background:#c4f042">Work</a>
-<a href="#about" style="color:#a9a59a;padding:6px 10px;border-radius:0" style-hover="color:#0d0e0c;background:#c4f042">About</a>
-<a href="#experience" style="color:#a9a59a;padding:6px 10px;border-radius:0" style-hover="color:#0d0e0c;background:#c4f042">Experience</a>
-<a href="#contact" style="color:#a9a59a;padding:6px 10px;border-radius:0" style-hover="color:#0d0e0c;background:#c4f042">Contact</a>
-<a href="#" style="margin-left:8px;font-family:'Geist Mono',monospace;font-size:12px;color:#ece8de;padding:6px 10px;border:1px solid #2c2d28;border-radius:0" style-hover="border-color:#c4f042;color:#c4f042">GitHub ↗</a>
+<a href="#work" style="color:#a9a59a;padding:6px 10px" style-hover="color:#0d0e0c;background:#c4f042">Work</a>
+<a href="#about" style="color:#a9a59a;padding:6px 10px" style-hover="color:#0d0e0c;background:#c4f042">About</a>
+<a href="#experience" style="color:#a9a59a;padding:6px 10px" style-hover="color:#0d0e0c;background:#c4f042">Experience</a>
+<a href="#contact" style="color:#a9a59a;padding:6px 10px" style-hover="color:#0d0e0c;background:#c4f042">Contact</a>
+<a href="#" style="margin-left:8px;font-family:'Geist Mono',monospace;font-size:12px;color:#ece8de;padding:6px 10px;border:1px solid #2c2d28" style-hover="border-color:#c4f042;color:#c4f042">GitHub ↗</a>
 </div>
 </div>
 </nav>
 
 <header id="top" style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(72px,12vw,150px) clamp(20px,4vw,40px) clamp(56px,8vw,96px)">
-<div style="display:flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:13px;color:#a9a59a;margin-bottom:28px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:48px;align-items:center">
+<div style="min-width:0">
+<div data-reveal="" style="display:flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:13px;color:#a9a59a;margin-bottom:28px">
 <span style="width:7px;height:7px;border-radius:50%;background:#c4f042;box-shadow:0 0 0 4px rgba(196,240,66,.12)"></span>
 Software Developer · Independent Builder</div>
 <sc-if value="{{ headlineShort }}" hint-placeholder-val="{{ true }}">
-<h1 style="margin:0;font-size:clamp(52px,10vw,132px);line-height:.92;font-weight:800;letter-spacing:-.045em;color:#ece8de">I build<br><span style="background:linear-gradient(90deg,#c4f042 0%,#f0a05a 100%);-webkit-background-clip:text;background-clip:text;color:transparent">software.</span>{{ caret }}</h1>
-<p style="margin:32px 0 0;max-width:620px;font-size:clamp(18px,2vw,22px);line-height:1.45;color:#a9a59a;text-wrap:pretty">Apps, tools, games, and whatever else seems worth building.</p>
+<h1 data-reveal="" style="margin:0;font-size:clamp(52px,10vw,132px);line-height:.92;font-weight:800;letter-spacing:-.045em;color:#ece8de">I build<br><span style="white-space:nowrap"><span style="background:linear-gradient(90deg,#c4f042 0%,#f0a05a 100%);-webkit-background-clip:text;background-clip:text;color:transparent">software.</span>{{ caret }}</span></h1>
+<p data-reveal="" style="margin:32px 0 0;max-width:620px;font-size:clamp(18px,2vw,22px);line-height:1.45;color:#a9a59a;text-wrap:pretty">Apps, tools, games, and whatever else seems worth building.</p>
 </sc-if>
 <sc-if value="{{ headlineLong }}" hint-placeholder-val="{{ false }}">
 <h1 style="margin:0;max-width:1000px;font-size:clamp(40px,6.4vw,84px);line-height:1;font-weight:800;letter-spacing:-.04em;color:#ece8de;text-wrap:balance">Software developer building useful things across web, desktop, terminal, and games.{{ caret }}</h1>
 </sc-if>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:40px">
-<a href="#work" style="display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;background:transparent;border:1px solid #c4f042;color:#c4f042;font-weight:600;font-size:15px;border-radius:0" style-hover="background:#c4f042;color:#0d0e0c">View my work <span>↓</span></a>
-<a href="#" style="display:inline-flex;align-items:center;height:48px;padding:0 20px;border:1px solid #2c2d28;color:#ece8de;font-weight:500;font-size:15px;border-radius:0" style-hover="border-color:#ece8de;color:#ece8de">GitHub</a>
-<a href="#contact" style="display:inline-flex;align-items:center;height:48px;padding:0 20px;border:1px solid #2c2d28;color:#ece8de;font-weight:500;font-size:15px;border-radius:0" style-hover="border-color:#ece8de;color:#ece8de">Contact</a>
+<div data-reveal="" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:40px">
+<a href="#work" style="display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border:1px solid #c4f042;color:#c4f042;font-weight:600;font-size:15px" style-hover="background:#c4f042;color:#0d0e0c">View my work <span>↓</span></a>
+<a href="#" style="display:inline-flex;align-items:center;height:48px;padding:0 20px;border:1px solid #2c2d28;color:#ece8de;font-weight:500;font-size:15px" style-hover="border-color:#ece8de;color:#ece8de">GitHub</a>
+<a href="#contact" style="display:inline-flex;align-items:center;height:48px;padding:0 20px;border:1px solid #2c2d28;color:#ece8de;font-weight:500;font-size:15px" style-hover="border-color:#ece8de;color:#ece8de">Contact</a>
 </div>
-<div style="margin-top:72px;display:flex;flex-wrap:wrap;gap:8px 28px;font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;border-top:1px dashed #2a2b26;padding-top:20px">
-<sc-for list="{{ platforms }}" as="pl" hint-placeholder-count="7">
+</div>
+<sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+<div data-reveal="" aria-hidden="true" style="position:relative;width:100%;max-width:540px;aspect-ratio:1/.9;justify-self:end">
+<div style="position:absolute;inset:6% 4%;border:1px dashed #23241f"></div>
+<span style="position:absolute;left:4%;top:calc(6% - 22px);font-family:'Geist Mono',monospace;font-size:11px;color:#4f4d46">~/projects</span>
+<a href="#work" data-float="" style="position:absolute;left:8%;top:12%;width:124px;height:124px;display:block;transform:rotate(-6deg)"><img src="assets/icons/maitty-clean.png" alt="" style="width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55));transition:transform .45s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.08) rotate(-3deg)"></a>
+<a href="#work" data-float="" style="position:absolute;left:58%;top:2%;width:104px;height:104px;display:block;transform:rotate(5deg)"><img src="assets/icons/linkables.png" alt="" style="width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55));transition:transform .45s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.08) rotate(-3deg)"></a>
+<a href="#work" data-float="" style="position:absolute;left:40%;top:38%;width:92px;height:92px;display:block;transform:rotate(-4deg)"><img src="assets/icons/clip-it.png" alt="" style="width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55));transition:transform .45s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.08) rotate(-3deg)"></a>
+<a href="#work" data-float="" style="position:absolute;left:72%;top:42%;width:108px;height:108px;display:block;transform:rotate(7deg)"><img src="assets/icons/scrib.png" alt="" style="width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55));transition:transform .45s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.08) rotate(-3deg)"></a>
+<a href="#work" data-float="" style="position:absolute;left:12%;top:60%;width:88px;height:88px;display:block;transform:rotate(4deg)"><svg viewBox="0 0 64 64" width="88" height="88" style="display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))"><g fill="none" stroke="#7fd34a" stroke-width="7" stroke-linecap="square"><path d="M6 20V6h14"></path><path d="M44 6h14v14"></path><path d="M58 44v14H44"></path><path d="M20 58H6V44"></path></g><path d="M24 18v30l8-7 5 11 6-3-5-10h10z" fill="#0d0e0c" stroke="#ece8de" stroke-width="3" stroke-linejoin="round"></path></svg></a>
+<a href="#work" data-float="" style="position:absolute;left:48%;top:70%;width:88px;height:88px;display:block;transform:rotate(-8deg)"><img src="assets/icons/crowns.png" alt="" style="width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55));transition:transform .45s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.08) rotate(-3deg)"></a>
+</div>
+</sc-if>
+</div>
+<div data-reveal="" style="margin-top:72px;display:flex;flex-wrap:wrap;gap:8px 28px;font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;border-top:1px dashed #2a2b26;padding-top:20px">
+<sc-for list="{{ platforms }}" as="pl" hint-placeholder-count="6">
 <span style="display:flex;align-items:center;gap:8px"><span style="width:4px;height:4px;background:#c4f042"></span>{{ pl.label }}</span>
 </sc-for>
 </div>
@@ -65,129 +84,123 @@ Software Developer · Independent Builder</div>
 <main style="position:relative;max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
 
 <section id="work" style="padding:48px 0 96px;scroll-margin-top:72px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:36px">
+<div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:36px">
 <div>
 <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;margin-bottom:12px"><span style="color:#c4f042">01</span> ── selected work</div>
 <h2 style="margin:0;font-size:clamp(32px,4.4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Things I've shipped.</h2>
 </div>
-<p style="margin:0;max-width:360px;color:#a9a59a;font-size:15px;line-height:1.55;text-wrap:pretty">Browser, desktop, terminal, or game engine — wherever the idea runs best.</p>
+<p style="margin:0;max-width:360px;color:#a9a59a;font-size:15px;line-height:1.55;text-wrap:pretty">Browser, desktop, terminal, or game engine. Wherever the idea runs best.</p>
 </div>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:20px;margin-bottom:20px">
-<sc-for list="{{ featured }}" as="p" hint-placeholder-count="2">
-<article style="display:flex;flex-direction:column;background:#141512;border:1px solid #23241f;border-radius:0;overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);border-color:#4d5a26;box-shadow:0 24px 48px -24px rgba(196,240,66,.18)">
-<div style="position:relative;aspect-ratio:16/10;background-color:#10110f;background-image:linear-gradient(rgba(236,232,222,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(236,232,222,.04) 1px,transparent 1px);background-size:24px 24px;border-bottom:1px solid #23241f;display:flex;align-items:center;justify-content:center">
-<div style="position:absolute;z-index:1;top:14px;left:14px;display:flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#ece8de;background:#0d0e0c;border:1px solid #2c2d28;padding:5px 9px;border-radius:0"><span style="width:6px;height:6px;background:#f0a05a"></span>{{ p.type }}</div>
-<sc-if value="{{ p.img }}" hint-placeholder-val="{{ false }}"><img src="{{ p.img }}" alt="{{ p.name }} screenshot" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%"></sc-if>
-<sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;bottom:14px;right:14px;font-family:'Geist Mono',monospace;font-size:10px;color:#4f4d46">screenshot · 16:10</div>
-<div style="width:96px;height:96px;border-radius:0;background:#1b1c18;border:1px solid #33342e;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:34px;letter-spacing:-.04em;color:#ece8de;box-shadow:0 20px 40px -12px rgba(0,0,0,.6)">{{ p.mark }}</div></sc-if>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:1px;background:#23241f;border:1px solid #23241f">
+<sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+<article data-reveal="" data-card="" style="display:flex;flex-direction:column;gap:18px;padding:28px;background:#0d0e0c;transition:background .2s ease" style-hover="background:#141512">
+<div style="display:flex;align-items:center;gap:16px">
+<div data-icon="" style="width:56px;height:56px;flex:none;display:flex;align-items:center;justify-content:center;transition:transform .45s cubic-bezier(.2,.8,.2,1)">
+<sc-if value="{{ p.icon }}" hint-placeholder-val="{{ false }}"><img src="{{ p.icon }}" alt="{{ p.name }} icon" style="width:{{ p.size }};height:{{ p.size }};object-fit:contain;display:block;flex:none"></sc-if>
+<sc-if value="{{ p.snipux }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 64 64" width="52" height="52" style="display:block"><g fill="none" stroke="#7fd34a" stroke-width="7" stroke-linecap="square"><path d="M6 20V6h14"></path><path d="M44 6h14v14"></path><path d="M58 44v14H44"></path><path d="M20 58H6V44"></path></g><path d="M24 18v30l8-7 5 11 6-3-5-10h10z" fill="#0d0e0c" stroke="#ece8de" stroke-width="3" stroke-linejoin="round"></path></svg></sc-if>
 </div>
-<div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1">
-<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-<h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-.02em">{{ p.name }}</h3>
-<span style="display:flex;align-items:center;gap:7px;font-family:'Geist Mono',monospace;font-size:11px;color:#a9a59a;white-space:nowrap"><span style="width:6px;height:6px;border-radius:50%;background:{{ p.dot }}"></span>{{ p.status }}</span>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1">{{ p.name }}</h3>
+<span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6f6c63">{{ p.type }}</span>
+</div>
 </div>
 <p style="margin:0;color:#a9a59a;font-size:15px;line-height:1.55;text-wrap:pretty">{{ p.desc }}</p>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:12px;border-top:1px solid #1f201c;flex-wrap:wrap">
-<span style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63">{{ p.tech }}</span>
-<a href="#" style="font-size:14px;font-weight:600;color:#c4f042;padding:4px 8px;margin:-4px -8px;border-radius:0" style-hover="background:#c4f042;color:#0d0e0c">{{ p.action }} →</a>
+<div style="display:flex;flex-direction:column;gap:14px;margin-top:auto">
+<span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#6f6c63">{{ p.tech }}</span>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;border-top:1px solid #1f201c">
+<span style="display:flex;align-items:center;gap:7px;font-family:'Geist Mono',monospace;font-size:11px;color:#a9a59a;white-space:nowrap"><span style="width:6px;height:6px;border-radius:50%;background:{{ p.dot }}"></span>{{ p.status }}</span>
+<sc-if value="{{ p.action }}" hint-placeholder-val="{{ true }}"><a href="#" style="font-size:14px;font-weight:600;color:#c4f042;padding:4px 8px;margin:-4px -8px" style-hover="background:#c4f042;color:#0d0e0c">{{ p.action }} <span data-arrow="" style="display:inline-block;transition:transform .3s cubic-bezier(.2,.8,.2,1)">→</span></a></sc-if>
 </div>
 </div>
 </article>
 </sc-for>
 </div>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
-<sc-for list="{{ more }}" as="p" hint-placeholder-count="4">
-<article style="display:flex;flex-direction:column;background:#141512;border:1px solid #23241f;border-radius:0;overflow:hidden;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:#4d5a26">
-<div style="position:relative;aspect-ratio:4/3;background-color:#10110f;background-image:linear-gradient(rgba(236,232,222,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(236,232,222,.04) 1px,transparent 1px);background-size:20px 20px;border-bottom:1px solid #23241f;display:flex;align-items:center;justify-content:center">
-<div style="position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:7px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#ece8de;background:#0d0e0c;border:1px solid #2c2d28;padding:4px 8px;border-radius:0"><span style="width:5px;height:5px;background:#f0a05a"></span>{{ p.type }}</div>
-<div style="width:64px;height:64px;border-radius:0;background:#1b1c18;border:1px solid #33342e;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;letter-spacing:-.04em">{{ p.mark }}</div>
-</div>
-<div style="padding:20px;display:flex;flex-direction:column;gap:10px;flex:1">
-<div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-<h3 style="margin:0;font-size:18px;font-weight:700;letter-spacing:-.015em">{{ p.name }}</h3>
-<span style="display:flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:10.5px;color:#a9a59a;white-space:nowrap"><span style="width:6px;height:6px;border-radius:50%;background:{{ p.dot }}"></span>{{ p.status }}</span>
-</div>
-<p style="margin:0;color:#a9a59a;font-size:14px;line-height:1.5;text-wrap:pretty">{{ p.desc }}</p>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:10px;flex-wrap:wrap">
-<span style="font-family:'Geist Mono',monospace;font-size:11px;color:#6f6c63">{{ p.tech }}</span>
-<a href="#" style="font-size:13px;font-weight:600;color:#c4f042;padding:3px 6px;margin:-3px -6px;border-radius:0" style-hover="background:#c4f042;color:#0d0e0c">{{ p.action }} →</a>
-</div>
-</div>
-</article>
+<div style="margin-top:72px">
+<h3 data-reveal="" style="margin:0 0 20px;font-size:18px;font-weight:700;letter-spacing:-.015em">Earlier work</h3>
+<div style="display:flex;flex-direction:column;border-top:1px solid #23241f">
+<sc-for list="{{ earlier }}" as="e" hint-placeholder-count="8">
+<a href="#" data-reveal="" style="display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;padding:18px 12px;margin:0 -12px;border-bottom:1px solid #23241f;color:#ece8de;transition:background .15s" style-hover="background:#141512;color:#ece8de">
+<span style="font-weight:600;font-size:15px;flex:0 0 180px">{{ e.name }}</span>
+<span style="display:flex;flex-direction:column;gap:4px;flex:1 1 320px;min-width:0"><span style="color:#a9a59a;font-size:14.5px;line-height:1.5">{{ e.desc }}</span><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#6f6c63">{{ e.tech }}</span></span>
+<span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#c4f042;white-space:nowrap">GitHub ↗</span>
+</a>
 </sc-for>
+</div>
 </div>
 </section>
 
 <section style="padding:80px 0;border-top:1px solid #1f201c;border-bottom:1px solid #1f201c">
-<p style="margin:0;max-width:980px;font-size:clamp(28px,4vw,48px);line-height:1.15;font-weight:600;letter-spacing:-.025em;text-wrap:balance;color:#ece8de">I like building useful software regardless of where it runs — <span style="color:#6f6c63">browser, desktop, terminal, or game engine.</span></p>
+<p data-reveal="" style="margin:0;max-width:980px;font-size:clamp(28px,4vw,48px);line-height:1.15;font-weight:600;letter-spacing:-.025em;text-wrap:balance;color:#ece8de">I like building useful software regardless of where it runs, <span style="color:#6f6c63">browser, desktop, terminal, or game engine.</span></p>
 </section>
 
-<section id="building" style="padding:96px 0 64px">
-<div style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;margin-bottom:12px"><span style="color:#c4f042">02</span> ── currently building</div>
-<h2 style="margin:0 0 32px;font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.03em">On the workbench.</h2>
-<div style="display:flex;flex-direction:column;border-top:1px solid #23241f">
-<sc-for list="{{ experiments }}" as="e" hint-placeholder-count="4">
-<div style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) auto;gap:8px 24px;align-items:baseline;padding:20px 12px;margin:0 -12px;border-bottom:1px solid #23241f;border-radius:0;transition:background .15s" style-hover="background:#141512">
-<span style="font-weight:600;font-size:16px">{{ e.name }}</span>
-<span style="color:#a9a59a;font-size:15px;line-height:1.5">{{ e.desc }}</span>
-<span style="display:flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:11.5px;color:#a9a59a;white-space:nowrap"><span style="width:6px;height:6px;background:{{ e.dot }}"></span>{{ e.status }}</span>
-</div>
-</sc-for>
-</div>
-</section>
 
-<section id="about" style="padding:64px 0 96px;scroll-margin-top:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px">
+
+<section id="about" style="padding:96px 0 96px;scroll-margin-top:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px">
 <div>
-<div style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;margin-bottom:12px"><span style="color:#c4f042">03</span> ── about</div>
+<div style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;margin-bottom:12px"><span style="color:#c4f042">02</span> ── about</div>
 <h2 style="margin:0;font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.03em">Hi, I'm Cody.</h2>
-<div style="position:relative;margin-top:32px;width:min(100%,320px)">
+<div data-reveal="" style="position:relative;margin-top:32px;width:min(100%,320px)">
 <sc-if value="{{ portraitNormal }}" hint-placeholder-val="{{ true }}"><img src="assets/cody-chief-ink.png" alt="Illustration of Cody with Chief on his shoulders" style="display:block;width:100%;height:auto"></sc-if>
 <sc-if value="{{ portraitFlipped }}" hint-placeholder-val="{{ false }}"><img src="assets/cody-chief-ink.png" alt="Illustration of Cody with Chief on his shoulders" style="display:block;width:100%;height:auto;transform:scaleX(-1)"></sc-if>
 </div>
 </div>
-<div style="display:flex;flex-direction:column;gap:20px;font-size:18px;line-height:1.6;color:#c9c5ba;text-wrap:pretty">
+<div data-reveal="" style="display:flex;flex-direction:column;gap:20px;font-size:18px;line-height:1.6;color:#c9c5ba;text-wrap:pretty">
 <p style="margin:0">I'm a software developer who likes turning ideas into working software. I build across web, desktop, terminal applications, developer tools, and games.</p>
-<p style="margin:0">I care about simple interfaces, useful products, and understanding how things work under the hood. I'd rather pick the right tool for the job than stay locked into one stack — so I experiment a lot.</p>
+<p style="margin:0">I care about simple interfaces, useful products, and understanding how things work under the hood. I'd rather pick the right tool for the job than stay locked into one stack, so I experiment a lot.</p>
 <p style="margin:0">When I'm not at the keyboard, I'm usually out with <span style="color:#ece8de">Chief</span>, who also serves as head of QA.</p>
 </div>
 </section>
 
 <section id="experience" style="padding:64px 0 96px;scroll-margin-top:72px;border-top:1px solid #1f201c">
-<div style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;margin-bottom:12px"><span style="color:#c4f042">04</span> ── experience</div>
-<h2 style="margin:0 0 32px;font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.03em">Where I've worked.</h2>
-<div style="display:flex;flex-direction:column;gap:0">
-<sc-for list="{{ roles }}" as="r" hint-placeholder-count="3">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px 48px;padding:28px 0;border-top:1px solid #23241f">
-<div style="display:flex;flex-direction:column;gap:6px">
-<span style="font-weight:600;font-size:18px">{{ r.title }}</span>
+<div style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;margin-bottom:12px"><span style="color:#c4f042">03</span> ── experience</div>
+<h2 data-reveal="" style="margin:0 0 40px;font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.03em">Experience &amp; education.</h2>
+<div style="display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column">
+<h3 data-reveal="" style="margin:0 0 16px;font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#f0a05a">Work</h3>
+<sc-for list="{{ work }}" as="r" hint-placeholder-count="2">
+<div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:6px 48px;align-items:baseline;padding:24px 0;border-top:1px solid #23241f">
+<span style="font-weight:600;font-size:17px">{{ r.title }}</span>
 <span style="color:#a9a59a;font-size:15px">{{ r.company }}</span>
-<span style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63">{{ r.dates }}</span>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px">
-<p style="margin:0;color:#c9c5ba;font-size:15px;line-height:1.55">{{ r.summary }}</p>
-<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
-<sc-for list="{{ r.points }}" as="pt" hint-placeholder-count="2">
-<li style="display:flex;gap:12px;color:#a9a59a;font-size:14.5px;line-height:1.5"><span style="color:#c4f042;font-family:'Geist Mono',monospace;flex:none">›</span>{{ pt }}</li>
-</sc-for>
-</ul>
-</div>
+<span style="display:flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63">{{ r.dates }}<sc-if value="{{ r.current }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:center;gap:6px;color:#c4f042"><span style="width:6px;height:6px;border-radius:50%;background:#c4f042"></span>current</span></sc-if></span>
 </div>
 </sc-for>
+</div>
+<div style="display:flex;flex-direction:column">
+<h3 data-reveal="" style="margin:0 0 16px;font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#f0a05a">Education</h3>
+<sc-for list="{{ school }}" as="d" hint-placeholder-count="2">
+<div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:6px 48px;align-items:baseline;padding:24px 0;border-top:1px solid #23241f">
+<span style="font-weight:600;font-size:17px">{{ d.title }}</span>
+<span style="color:#a9a59a;font-size:15px">{{ d.company }}</span>
+<span style="display:flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63">{{ d.dates }}<sc-if value="{{ d.current }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:center;gap:6px;color:#c4f042"><span style="width:6px;height:6px;border-radius:50%;background:#c4f042"></span>current</span></sc-if></span>
+</div>
+</sc-for>
+</div>
 </div>
 </section>
 
-
-
 <section id="contact" style="padding:96px 0 112px;scroll-margin-top:72px;border-top:1px solid #1f201c">
-<div style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;margin-bottom:20px"><span style="color:#c4f042">05</span> ── contact</div>
-<h2 style="margin:0;font-size:clamp(44px,8vw,104px);font-weight:800;letter-spacing:-.045em;line-height:.95">Want to build<br>something?</h2>
-<a href="mailto:hello@codystine.dev" style="display:inline-block;margin-top:36px;font-size:clamp(20px,2.6vw,30px);font-weight:500;color:#c4f042;border-bottom:2px solid #4d5a26;padding-bottom:4px" style-hover="color:#f0a05a;border-color:#f0a05a">hello@codystine.dev</a>
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:40px">
-<a href="#" style="font-family:'Geist Mono',monospace;font-size:13px;color:#ece8de;padding:10px 14px;border:1px solid #2c2d28;border-radius:0" style-hover="background:#c4f042;border-color:#c4f042;color:#0d0e0c">GitHub ↗</a>
-<a href="#" style="font-family:'Geist Mono',monospace;font-size:13px;color:#ece8de;padding:10px 14px;border:1px solid #2c2d28;border-radius:0" style-hover="background:#c4f042;border-color:#c4f042;color:#0d0e0c">LinkedIn ↗</a>
-<a href="#" style="font-family:'Geist Mono',monospace;font-size:13px;color:#ece8de;padding:10px 14px;border:1px solid #2c2d28;border-radius:0" style-hover="background:#c4f042;border-color:#c4f042;color:#0d0e0c">Résumé.pdf ↓</a>
+<div style="font-family:'Geist Mono',monospace;font-size:12px;color:#6f6c63;margin-bottom:20px"><span style="color:#c4f042">04</span> ── contact</div>
+<h2 data-reveal="" style="margin:0;font-size:clamp(44px,8vw,104px);font-weight:800;letter-spacing:-.045em;line-height:.95">Want to build<br>something?</h2>
+<p data-reveal="" style="margin:28px 0 0;max-width:520px;color:#a9a59a;font-size:17px;line-height:1.55;text-wrap:pretty">Send a note and I'll get back to you.</p>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<form data-reveal="" onSubmit="{{ onSend }}" style="margin-top:32px;max-width:640px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+<input required="" name="name" placeholder="Name" style="height:48px;padding:0 14px;background:#141512;border:1px solid #2c2d28;color:#ece8de;font:inherit;font-size:15px;outline:none;border-radius:0;transition:border-color .18s" style-focus="border-color:#c4f042">
+<input required="" type="email" name="email" placeholder="Your email" style="height:48px;padding:0 14px;background:#141512;border:1px solid #2c2d28;color:#ece8de;font:inherit;font-size:15px;outline:none;border-radius:0;transition:border-color .18s" style-focus="border-color:#c4f042">
+<textarea required="" name="message" rows="5" placeholder="What are you building?" style="grid-column:1/-1;padding:12px 14px;background:#141512;border:1px solid #2c2d28;color:#ece8de;font:inherit;font-size:15px;line-height:1.5;outline:none;resize:vertical;border-radius:0;transition:border-color .18s" style-focus="border-color:#c4f042"></textarea>
+<div style="grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+<button type="submit" style="height:48px;padding:0 22px;border:1px solid #c4f042;background:transparent;color:#c4f042;font:inherit;font-weight:600;font-size:15px;cursor:pointer;border-radius:0;transition:background-color .18s,color .18s" style-hover="background:#c4f042;color:#0d0e0c">Send message →</button>
+</div>
+</form>
+</sc-if>
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top:32px;max-width:640px;padding:20px;border:1px solid #4d5a26;display:flex;align-items:center;gap:12px;color:#ece8de;font-size:15px"><span style="width:8px;height:8px;background:#c4f042"></span>Thanks. Message sent. I'll reply soon.</div>
+</sc-if>
+<div data-reveal="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:40px">
+<a href="#" style="font-family:'Geist Mono',monospace;font-size:13px;color:#ece8de;padding:10px 14px;border:1px solid #2c2d28" style-hover="background:#c4f042;border-color:#c4f042;color:#0d0e0c">GitHub ↗</a>
+<a href="#" style="font-family:'Geist Mono',monospace;font-size:13px;color:#ece8de;padding:10px 14px;border:1px solid #2c2d28" style-hover="background:#c4f042;border-color:#c4f042;color:#0d0e0c">LinkedIn ↗</a>
+<a href="#" style="font-family:'Geist Mono',monospace;font-size:13px;color:#ece8de;padding:10px 14px;border:1px solid #2c2d28" style-hover="background:#c4f042;border-color:#c4f042;color:#0d0e0c">Résumé.pdf ↓</a>
 </div>
 </section>
 </main>
@@ -205,38 +218,95 @@ Software Developer · Independent Builder</div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Short&quot;,&quot;Long&quot;],&quot;default&quot;:&quot;Short&quot;,&quot;tsType&quot;:&quot;'Short'|'Long'&quot;},&quot;gridTexture&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;caret&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;flipPortrait&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
+  state = { wide: typeof window === 'undefined' ? true : window.innerWidth >= 1000 };
+  componentDidMount() {
+    this.onResize = () => { const w = window.innerWidth >= 1000; if (w !== this.state.wide) this.setState({ wide: w }, () => this.startFloats()); };
+    window.addEventListener('resize', this.onResize);
+    this.setupMotion(); this.startFloats();
+  }
+  startFloats() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('[data-float]').forEach((el, i) => {
+      if (el._float) return;
+      const r = el.style.transform || '';
+      el._float = el.animate([{ transform: r + ' translateY(0)' }, { transform: r + ' translateY(-' + (6 + (i % 3) * 3) + 'px)' }], { duration: 3200 + i * 450, direction: 'alternate', iterations: Infinity, easing: 'ease-in-out', delay: i * -700 });
+    });
+  }
+  componentWillUnmount() { this.io && this.io.disconnect(); window.removeEventListener('resize', this.onResize); }
+  setupMotion() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    if (!('IntersectionObserver' in window) || document.hidden) return this.bindCards();
+    const vh = window.innerHeight;
+    const els = Array.from(document.querySelectorAll('[data-reveal]')).filter(el => !el.dataset.revealed && el.getBoundingClientRect().top > vh * 0.9);
+    const show = el => { el.style.opacity = '1'; el.style.transform = 'none'; el.dataset.revealed = '1'; };
+    els.forEach(el => {
+      const sibs = Array.from(el.parentElement.children).filter(c => c.hasAttribute('data-reveal'));
+      const i = Math.min(sibs.indexOf(el), 6) % 4;
+      const base = el.style.transition ? el.style.transition + ',' : '';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = base + 'opacity .8s ' + ease + ' ' + (i * 70) + 'ms, transform .8s ' + ease + ' ' + (i * 70) + 'ms';
+    });
+    this.io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      show(e.target); this.io.unobserve(e.target);
+    }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => this.io.observe(el));
+    const revealAll = () => els.forEach(el => { if (!el.dataset.revealed) show(el); });
+    this.fallback = setTimeout(() => { if (document.hidden) revealAll(); }, 1500);
+    window.addEventListener('beforeprint', revealAll);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) revealAll(); });
+    this.bindCards();
+  }
+  bindCards() {
+    document.querySelectorAll('[data-card]').forEach(card => {
+      const icon = card.querySelector('[data-icon]'), arrow = card.querySelector('[data-arrow]');
+      card.addEventListener('mouseenter', () => { if (icon) icon.style.transform = 'translateY(-3px) rotate(-4deg) scale(1.06)'; if (arrow) arrow.style.transform = 'translateX(4px)'; });
+      card.addEventListener('mouseleave', () => { if (icon) icon.style.transform = ''; if (arrow) arrow.style.transform = ''; });
+    });
+  }
   renderVals() {
     const p = this.props;
-    const green = '#c4f042', orange = '#f0a05a', grey = '#6f6c63';
+    const green = '#c4f042', orange = '#f0a05a';
     const long = p.headline === 'Long';
     return {
       showGrid: p.gridTexture ?? true,
+      wide: this.state.wide,
+      sent: !!this.state?.sent,
+      notSent: !this.state?.sent,
+      onSend: (e) => { e.preventDefault(); this.setState({ sent: true }); },
       portraitFlipped: !!p.flipPortrait,
       portraitNormal: !p.flipPortrait,
       headlineShort: !long,
       headlineLong: long,
       caret: (p.caret ?? true) ? React.createElement('span', { key: 'c', style: { display: 'inline-block', width: '.09em', height: '.78em', marginLeft: '.06em', background: green, verticalAlign: '-.02em', animation: 'cs-blink 1.1s steps(1) infinite' } }) : null,
       platforms: ['web apps','desktop','terminal / tui','cli tools','browser extensions','games'].map(label => ({ label })),
-      featured: [
-        { img: 'assets/hydra.png', type: 'TUI', name: 'Hydra', status: 'In development', dot: orange, desc: 'Many heads, one body — a terminal home for your coding agents. They keep going when you leave, and Hydra tells you what needs you when you’re back.', tech: 'Terminal · v0.1.0', action: 'Learn more' },
-        { mark: 'Td', noImg: true, type: 'Desktop', name: 'Tidepool', status: 'Beta', dot: orange, desc: 'A local-first snippet and notes app that lives in your menu bar and syncs over your own network.', tech: 'Tauri · Rust · SolidJS', action: 'Download' },
+      projects: [
+        { icon: 'assets/icons/maitty-clean.png', size: '100%', type: 'TUI', name: 'maitty', status: 'Open source · v0.42', dot: green, desc: 'Run Claude Code, Codex and other coding agents side by side. They keep working after you close the window, and maitty shows which ones need you when you’re back.', tech: 'React · Windows / macOS / Linux', action: 'GitHub' },
+        { icon: 'assets/icons/linkables.png', size: '100%', type: 'Web app', name: 'linkables', status: 'In development', dot: orange, desc: 'Save any link in seconds, find it later from any device, and share it when you need to.', tech: 'React · Hono · Postgres', action: 'Visit site' },
+        { icon: 'assets/icons/scrib.png', size: '100%', type: 'Desktop', name: 'scrib', status: 'In development', dot: orange, desc: 'A fast, local-first desktop notebook that understands what you write: lists, running totals and unit conversions, all in plain text.', tech: 'Tauri · React · TypeScript', action: 'Visit site' },
+        { snipux: true, type: 'Desktop', name: 'snipux', status: 'Open source · v1.2', dot: green, desc: 'A Snipping Tool workalike for Linux and Windows. Snip a region, a window or the whole screen, mark it up and blur what shouldn’t be shared, or record the same area and trim it.', tech: 'Python · PyQt6', action: 'GitHub' },
+        { icon: 'assets/icons/clip-it.png', size: '96%', type: 'Extension', name: 'Clip-It', status: 'Free', dot: green, desc: 'A Chrome extension that loads every ShopRite digital coupon in one click, checks each one actually saved, and can run on a schedule.', tech: 'JavaScript · Chrome extension', action: 'Add to Chrome' },
+        { icon: 'assets/icons/crowns.png', size: '100%', type: 'Game', name: 'Reign of Crowns', status: 'Coming soon', dot: '#6f6c63', desc: 'A strategy game you can finish in ten minutes.', tech: 'In the works', action: null }
       ],
-      more: [
-        { mark: 'ln', type: 'TUI', name: 'lanes', status: 'Open source', dot: green, desc: 'Kanban boards in the terminal, backed by plain Markdown files you can commit alongside your code.', tech: 'Go · Bubble Tea', action: 'GitHub' },
-        { mark: 'Rl', type: 'Web', name: 'Relay', status: 'Free', dot: green, desc: 'Inspect, replay, and forward webhooks without deploying anything.', tech: 'Next.js · Redis', action: 'Visit' },
-        { mark: 'Tk', type: 'Extension', name: 'Tabkeep', status: 'Free', dot: green, desc: 'Park tab groups for later and restore them in one click.', tech: 'TypeScript · WebExt', action: 'Install' },
-        { mark: 'sh', type: 'CLI', name: 'shipit', status: 'Open source', dot: green, desc: 'One command to tag, changelog, build, and publish a release.', tech: 'Rust', action: 'GitHub' },
-        { mark: 'Rb', type: 'Game', name: 'Rootbound', status: 'In development', dot: orange, desc: 'A small cozy puzzle game about growing roots through stubborn soil.', tech: 'Godot · GDScript', action: 'Learn more' }
+      earlier: [
+        { name: 'PupDrive', desc: 'Cloud storage with bucket-style “Crates”, role-based permissions and subscription quotas.', tech: 'React · .NET · Postgres' },
+        { name: 'ShipHound', desc: 'CLI that deploys full-stack apps to a VPS: builds, SSH upload, Caddy with HTTPS, systemd, zero-downtime swaps.', tech: 'C# · .NET' },
+        { name: 'PupStack', desc: 'Full-stack app generator with auth, an admin dashboard, OAuth and themeable layouts.', tech: 'React · .NET' },
+        { name: 'Pawprint', desc: 'Screenshots a web app across every route, theme, palette and viewport with Playwright.', tech: 'TypeScript · Playwright' },
+        { name: 'Pawthorize', desc: 'Authentication library for ASP.NET Core: JWT with rotating refresh tokens, OAuth, sessions, lockout.', tech: 'C# · .NET' },
+        { name: 'ErrorHound', desc: 'Middleware for consistent, typed API error responses in ASP.NET Core.', tech: 'C# · .NET' },
+        { name: 'SuccessHound', desc: 'Strongly typed API success envelopes for .NET, with OpenAPI schemas and pagination.', tech: 'C# · .NET' },
+        { name: 'StashPup', desc: 'One file-storage interface for local disk, S3 and Azure Blob, with thumbnails and signed URLs.', tech: 'C# · .NET' }
       ],
-      experiments: [
-        { name: 'pixelkit', desc: 'A tiny sprite editor that exports straight to game-engine atlases.', status: 'prototype', dot: orange },
-        { name: 'quietlog', desc: 'Structured log viewer for the terminal with fuzzy filtering.', status: 'in progress', dot: green },
-        { name: 'herd', desc: 'Run and watch a fleet of local dev services from one dashboard.', status: 'exploring', dot: grey },
-        { name: 'fetchball', desc: 'A one-button arcade game. Chief approved the concept.', status: 'paused', dot: grey }
+      work: [
+        { title: 'Full Stack Developer', company: 'Drive Smart ↗', dates: 'Apr 2023 – Present', current: true },
+        { title: 'Software Engineer Intern', company: 'Bay Master ↗', dates: 'Jan 2021 – May 2022' }
       ],
-      roles: [
-        { title: 'Software Engineer', company: 'Company Name', dates: '2023 — Present', summary: 'Build and maintain internal tooling and customer-facing product features across the stack.', points: ['Shipped a desktop companion app used daily by the support team.', 'Cut CI pipeline time in half by reworking build caching.'] },
-        { title: 'Software Developer', company: 'Company Name', dates: '2021 — 2023', summary: 'Worked on APIs, background job infrastructure, and developer experience.', points: ['Designed a queue-based job system processing millions of tasks a week.', 'Wrote the CLI the team uses for local environment setup.'] }
+      school: [
+        { title: 'B.S. Software Engineering', company: 'Western Governors University', dates: 'Sep 2021 – May 2023' },
+        { title: 'A.S. Computer Science', company: 'Ocean County College', dates: 'Sep 2019 – Jan 2021' }
       ]
     };
   }
