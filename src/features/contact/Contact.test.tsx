@@ -12,19 +12,19 @@ async function renderContact() {
 }
 
 describe("Contact", () => {
-  it("hides the email link while no address is set", async () => {
+  it("hides the email link if the address is empty", async () => {
+    vi.doMock("@/content/site", async (importOriginal) => ({
+      ...(await importOriginal<typeof import("@/content/site")>()),
+      EMAIL: "",
+    }));
     const { container } = await renderContact();
     expect(container.querySelector('a[href^="mailto:"]')).toBeNull();
   });
 
-  it("shows the email link once an address is set", async () => {
-    vi.doMock("@/content/site", async (importOriginal) => ({
-      ...(await importOriginal<typeof import("@/content/site")>()),
-      EMAIL: "a@b.c",
-    }));
+  it("shows the email link", async () => {
     await renderContact();
-    expect(screen.getByRole("link", { name: "a@b.c" }).getAttribute("href")).toBe(
-      "mailto:a@b.c",
+    expect(screen.getByRole("link", { name: "cydoentis@gmail.com" }).getAttribute("href")).toBe(
+      "mailto:cydoentis@gmail.com",
     );
   });
 

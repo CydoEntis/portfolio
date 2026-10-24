@@ -37,9 +37,12 @@ describe("WorkSection", () => {
     expect(link.getAttribute("href")).toBe("https://linkables.app");
   });
 
-  it("gives Clip-It no link yet", () => {
+  it("links Clip-It to its Chrome Web Store listing only", () => {
     render(<WorkSection />);
-    expect(links(card("Clip-It"))).toHaveLength(0);
+    const [link, ...rest] = links(card("Clip-It"));
+    expect(rest).toHaveLength(0);
+    expect(link.textContent).toContain("Add to Chrome");
+    expect(link.getAttribute("href")).toContain("chromewebstore.google.com/detail/");
   });
 
   it("never links to the paid apps' source", () => {

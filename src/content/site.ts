@@ -1,7 +1,7 @@
 // Copied from docs/CONTENT.md. Change the words there first, then here.
 
-// Empty until Cody supplies an address; the contact link hides while it is.
-export const EMAIL = "";
+// The contact link hides if this is ever emptied.
+export const EMAIL = "cydoentis@gmail.com";
 
 export const LINKS = {
   github: "https://github.com/CydoEntis",
@@ -107,6 +107,7 @@ export const MORE_WORK: Project[] = [
     tech: "JavaScript · Chrome extension",
     image: "/projects/clip-it.webp",
     imagePosition: "left center",
+    action: { label: "Add to Chrome", href: "https://chromewebstore.google.com/detail/clip-it-digital-coupon-lo/eholcdgbgoljfmjkidhmmiabdcpigaai" },
   },
 ];
 

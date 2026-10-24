@@ -18,8 +18,8 @@ describe("site content", () => {
     expect(MORE_WORK[1].action?.href).toBe("https://linkables.app");
   });
 
-  it("gives Clip-It no link until its store listing is added", () => {
-    expect(MORE_WORK[2].action).toBeUndefined();
+  it("links Clip-It to its Chrome Web Store listing", () => {
+    expect(MORE_WORK[2].action?.href).toMatch(/^https:\/\/chromewebstore\.google\.com\/detail\//);
   });
 
   it("never links a paid app to its source", () => {
@@ -32,7 +32,7 @@ describe("site content", () => {
     expect(EARLIER_WORK).toHaveLength(8);
   });
 
-  it("ships without an email address until one is supplied", () => {
-    expect(EMAIL).toBe("");
+  it("has Cody's contact email", () => {
+    expect(EMAIL).toBe("cydoentis@gmail.com");
   });
 });

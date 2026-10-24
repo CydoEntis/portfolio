@@ -17,9 +17,8 @@ Don't invent descriptions, metrics or bullet points that are not here.
 - GitHub: https://github.com/CydoEntis
 - LinkedIn: https://www.linkedin.com/in/cody-stine-dev/
 - Résumé: /resume.pdf (already in `public/`)
-- Email: `EMAIL` in `src/content/site.ts`. Until Cody supplies the address it
-  is an empty string, and the contact email link is not rendered while it is
-  empty.
+- Email: cydoentis@gmail.com (`EMAIL` in `src/content/site.ts`; the link
+  hides if it is ever empty)
 
 ## 01 Selected work
 
@@ -30,8 +29,7 @@ Status dot colours: lime for open source / shipped / free, orange for in
 development.
 
 scrib and linkables are paid apps and Clip-It's repo is private: never link to their source.
-Their action link goes to the app's landing page. A project with no landing
-page yet has no action link.
+Their action link goes to the app's landing page or store listing.
 
 ### Featured (large cards, in this order)
 
@@ -75,7 +73,7 @@ page yet has no action link.
 - Description: A Chrome extension that loads every ShopRite digital coupon in one click, checks each one actually saved, and can run on a schedule.
 - Tech: JavaScript · Chrome extension
 - Media: `/projects/clip-it.webp`
-- Action: none until its Chrome Web Store link is added
+- Action: "Add to Chrome" → https://chromewebstore.google.com/detail/clip-it-digital-coupon-lo/eholcdgbgoljfmjkidhmmiabdcpigaai
 
 ### Earlier work (compact list under the cards)
 
