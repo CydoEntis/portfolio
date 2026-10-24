@@ -1,30 +1,32 @@
 import { describe, expect, it } from "vitest";
-import { EARLIER_WORK, EMAIL, FEATURED, MORE_WORK } from "./site";
+import { EARLIER_WORK, PROJECTS } from "./site";
+
+const project = (name: string) => PROJECTS.find((p) => p.name === name);
 
 describe("site content", () => {
-  it("features maitty then snipux", () => {
-    expect(FEATURED.map((p) => p.name)).toEqual(["maitty", "snipux"]);
+  it("lists the six projects in the design's order", () => {
+    expect(PROJECTS.map((p) => p.name)).toEqual([
+      "maitty",
+      "linkables",
+      "scrib",
+      "snipux",
+      "Clip-It",
+      "Reign of Crowns",
+    ]);
   });
 
-  it("lists scrib, linkables and Clip-It as more work", () => {
-    expect(MORE_WORK.map((p) => p.name)).toEqual(["scrib", "linkables", "Clip-It"]);
-  });
-
-  it("links scrib to its landing page", () => {
-    expect(MORE_WORK[0].action?.href).toBe("https://getscrib.com");
-  });
-
-  it("links linkables to its landing page", () => {
-    expect(MORE_WORK[1].action?.href).toBe("https://linkables.app");
+  it("links the paid apps to their landing pages", () => {
+    expect(project("scrib")?.action?.href).toBe("https://getscrib.com");
+    expect(project("linkables")?.action?.href).toBe("https://linkables.app");
   });
 
   it("links Clip-It to its Chrome Web Store listing", () => {
-    expect(MORE_WORK[2].action?.href).toMatch(/^https:\/\/chromewebstore\.google\.com\/detail\//);
+    expect(project("Clip-It")?.action?.href).toMatch(/^https:\/\/chromewebstore\.google\.com\/detail\//);
   });
 
-  it("never links a paid app to its source", () => {
-    for (const project of MORE_WORK) {
-      expect(project.action?.href ?? "").not.toContain("github.com");
+  it("never links a private or paid project to its source", () => {
+    for (const name of ["scrib", "linkables", "Clip-It", "Reign of Crowns"]) {
+      expect(project(name)?.action?.href ?? "").not.toContain("github.com");
     }
   });
 
@@ -32,7 +34,8 @@ describe("site content", () => {
     expect(EARLIER_WORK).toHaveLength(8);
   });
 
-  it("has Cody's contact email", () => {
-    expect(EMAIL).toBe("cydoentis@gmail.com");
+  it("uses no em dashes in any copy", async () => {
+    const site = await import("./site");
+    expect(JSON.stringify(site)).not.toContain(String.fromCharCode(0x2014));
   });
 });

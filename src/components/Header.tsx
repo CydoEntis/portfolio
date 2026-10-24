@@ -16,7 +16,7 @@ export default function Header() {
           href="#top"
           className="flex items-center gap-2.5 text-sm font-bold tracking-[.08em] text-text"
         >
-          <span className="block size-2 bg-lime" />
+          <img src="/favicon.svg" alt="" width={22} height={22} className="block size-[22px] [image-rendering:pixelated]" />
           CODY STINE
         </a>
         <div className="flex flex-wrap items-center gap-1 text-sm">

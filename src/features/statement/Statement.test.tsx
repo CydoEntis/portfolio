@@ -6,7 +6,7 @@ describe("Statement", () => {
   it("reads as one sentence", () => {
     const { container } = render(<Statement />);
     expect(container.textContent).toBe(
-      "I like building useful software regardless of where it runs — browser, desktop, terminal, or game engine.",
+      "I like building useful software regardless of where it runs, browser, desktop, terminal, or game engine.",
     );
   });
 });
