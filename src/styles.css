@@ -77,6 +77,13 @@ section[id] {
     box-shadow 0.25s ease;
 }
 
+/* Done here rather than with a translate utility: Tailwind's translate-* sets
+   the separate `translate` property, which the reduced-motion reset below
+   would not cover. */
+.motion-lift:hover {
+  transform: translateY(-4px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

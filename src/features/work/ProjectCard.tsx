@@ -39,7 +39,7 @@ export default function ProjectCard({ project, size }: { project: Project; size:
     <article
       aria-label={project.name}
       className={cn(
-        "motion-lift flex flex-col overflow-hidden border border-line-card bg-surface hover:-translate-y-1 hover:border-lime-dim",
+        "motion-lift flex flex-col overflow-hidden border border-line-card bg-surface hover:border-lime-dim",
         size === "featured" && "hover:shadow-[0_24px_48px_-24px_rgba(196,240,66,.18)]",
       )}
     >
