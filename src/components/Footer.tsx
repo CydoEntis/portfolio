@@ -1,24 +1,22 @@
-import { SOCIAL_LINKS } from "@/lib/constants";
+import Container from "./Container";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto max-w-[760px] px-7 py-6 flex items-center justify-between">
-        <span className="font-mono text-xs text-dim">&copy; 2025 Cody Stine</span>
-        <div className="flex items-center gap-4">
-          {[SOCIAL_LINKS.github, SOCIAL_LINKS.linkedin].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-dim hover:text-mid transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+    <footer className="border-t border-line">
+      <Container className="flex flex-wrap items-center justify-between gap-4 py-7 text-[13px] text-faint">
+        <div className="flex items-center gap-3">
+          <span className="block size-1.5 bg-lime" />
+          <span>
+            Built by Cody. <span className="text-muted">Supervised by Chief.</span>
+          </span>
         </div>
-      </div>
+        <span className="font-mono text-xs">
+          © 2026 ·{" "}
+          <a href="#top" className="text-faint transition-colors duration-150 hover:text-orange">
+            back to top ↑
+          </a>
+        </span>
+      </Container>
     </footer>
   );
 }
