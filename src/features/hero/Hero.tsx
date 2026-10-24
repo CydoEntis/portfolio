@@ -22,7 +22,7 @@ export default function Hero() {
         <h1 className="m-0 text-[clamp(52px,10vw,132px)] leading-[.92] font-extrabold tracking-[-.045em] text-text">
           {lead}
           <br />
-          <span className="bg-[linear-gradient(90deg,#c4f042_0%,#f0a05a_100%)] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-lime to-orange bg-clip-text text-transparent">
             {accent}
           </span>
           <span
