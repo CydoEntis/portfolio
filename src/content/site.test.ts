@@ -6,8 +6,8 @@ describe("site content", () => {
     expect(FEATURED.map((p) => p.name)).toEqual(["maitty", "snipux"]);
   });
 
-  it("lists scrib, linkables and Clip-It as more work", () => {
-    expect(MORE_WORK.map((p) => p.name)).toEqual(["scrib", "linkables", "Clip-It"]);
+  it("lists scrib, linkables, Clip-It and Reign of Crowns as more work", () => {
+    expect(MORE_WORK.map((p) => p.name)).toEqual(["scrib", "linkables", "Clip-It", "Reign of Crowns"]);
   });
 
   it("links scrib to its landing page", () => {

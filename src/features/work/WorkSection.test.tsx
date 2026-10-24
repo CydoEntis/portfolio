@@ -6,10 +6,16 @@ const card = (name: string) => screen.getByRole("article", { name });
 const links = (el: HTMLElement) => within(el).queryAllByRole("link");
 
 describe("WorkSection", () => {
-  it("shows the five projects in order", () => {
+  it("shows the six projects in order", () => {
     render(<WorkSection />);
     const names = screen.getAllByRole("article").map((a) => a.getAttribute("aria-label"));
-    expect(names).toEqual(["maitty", "snipux", "scrib", "linkables", "Clip-It"]);
+    expect(names).toEqual(["maitty", "snipux", "scrib", "linkables", "Clip-It", "Reign of Crowns"]);
+  });
+
+  it("marks Reign of Crowns as coming soon with no links", () => {
+    render(<WorkSection />);
+    expect(within(card("Reign of Crowns")).getByText("Coming soon")).toBeTruthy();
+    expect(links(card("Reign of Crowns"))).toHaveLength(0);
   });
 
   it("links the open-source projects to their GitHub repos in a new tab", () => {
@@ -48,7 +54,7 @@ describe("WorkSection", () => {
   it("never links to the paid apps' source", () => {
     const { container } = render(<WorkSection />);
     const hrefs = [...container.querySelectorAll("a")].map((a) => a.href.toLowerCase());
-    for (const repo of ["scrib", "linkables", "clip-it"]) {
+    for (const repo of ["scrib", "linkables", "clip-it", "reign-of-crowns"]) {
       expect(hrefs.some((h) => h.includes(`github.com/cydoentis/${repo}`))).toBe(false);
     }
   });

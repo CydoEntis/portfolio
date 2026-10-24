@@ -28,7 +28,7 @@ engine — wherever the idea runs best."
 Status dot colours: lime for open source / shipped / free, orange for in
 development.
 
-scrib and linkables are paid apps and Clip-It's repo is private: never link to their source.
+scrib and linkables are paid apps, and Clip-It's and Reign of Crowns' repos are private: never link to their source.
 Their action link goes to the app's landing page or store listing.
 
 ### Featured (large cards, in this order)
@@ -74,6 +74,14 @@ Their action link goes to the app's landing page or store listing.
 - Tech: JavaScript · Chrome extension
 - Media: `/projects/clip-it.webp`
 - Action: "Add to Chrome" → https://chromewebstore.google.com/detail/clip-it-digital-coupon-lo/eholcdgbgoljfmjkidhmmiabdcpigaai
+
+**Reign of Crowns**
+- Type: Browser game
+- Status: Coming soon (orange)
+- Description: An MMORTS 4X you play free in your browser. Build an army, grow your castle and ally with other players to capture the 3 crowns before the season ends.
+- Tech: React · PixiJS · Node · Postgres
+- Media: none yet; the logo is coming
+- Action: none until it launches. The repo is private: never link to its source.
 
 ### Earlier work (compact list under the cards)
 

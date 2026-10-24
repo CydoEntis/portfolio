@@ -109,6 +109,15 @@ export const MORE_WORK: Project[] = [
     imagePosition: "left center",
     action: { label: "Add to Chrome", href: "https://chromewebstore.google.com/detail/clip-it-digital-coupon-lo/eholcdgbgoljfmjkidhmmiabdcpigaai" },
   },
+  {
+    name: "Reign of Crowns",
+    type: "Browser game",
+    status: "Coming soon",
+    tone: "orange",
+    description:
+      "An MMORTS 4X you play free in your browser. Build an army, grow your castle and ally with other players to capture the 3 crowns before the season ends.",
+    tech: "React · PixiJS · Node · Postgres",
+  },
 ];
 
 export type EarlierProject = {
