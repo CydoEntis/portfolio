@@ -29,7 +29,7 @@ engine — wherever the idea runs best."
 Status dot colours: lime for open source / shipped / free, orange for in
 development.
 
-scrib, linkables and Clip-It are paid apps: never link to their source.
+scrib and linkables are paid apps and Clip-It's repo is private: never link to their source.
 Their action link goes to the app's landing page. A project with no landing
 page yet has no action link.
 
@@ -67,15 +67,15 @@ page yet has no action link.
 - Description: Save any link in seconds, find it later from any device, and share it when you need to.
 - Tech: React · Hono · Postgres
 - Media: none; use the icon tile with `/projects/linkables-icon.png`
-- Action: none until the landing page is live
+- Action: "Visit site" → https://linkables.app
 
 **Clip-It**
 - Type: Browser extension
-- Status: Coming soon (orange)
+- Status: Free (lime)
 - Description: A Chrome extension that loads every ShopRite digital coupon in one click, checks each one actually saved, and can run on a schedule.
 - Tech: JavaScript · Chrome extension
 - Media: `/projects/clip-it.webp`
-- Action: none until the landing page is live
+- Action: none until its Chrome Web Store link is added
 
 ### Earlier work (compact list under the cards)
 

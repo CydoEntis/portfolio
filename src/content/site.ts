@@ -95,12 +95,13 @@ export const MORE_WORK: Project[] = [
       "Save any link in seconds, find it later from any device, and share it when you need to.",
     tech: "React · Hono · Postgres",
     icon: "/projects/linkables-icon.png",
+    action: { label: "Visit site", href: "https://linkables.app" },
   },
   {
     name: "Clip-It",
     type: "Browser extension",
-    status: "Coming soon",
-    tone: "orange",
+    status: "Free",
+    tone: "lime",
     description:
       "A Chrome extension that loads every ShopRite digital coupon in one click, checks each one actually saved, and can run on a schedule.",
     tech: "JavaScript · Chrome extension",

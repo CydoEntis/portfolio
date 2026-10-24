@@ -30,9 +30,15 @@ describe("WorkSection", () => {
     expect(link.getAttribute("href")).toBe("https://getscrib.com");
   });
 
-  it("gives linkables and Clip-It no links yet", () => {
+  it("links linkables to its landing page only", () => {
     render(<WorkSection />);
-    expect(links(card("linkables"))).toHaveLength(0);
+    const [link, ...rest] = links(card("linkables"));
+    expect(rest).toHaveLength(0);
+    expect(link.getAttribute("href")).toBe("https://linkables.app");
+  });
+
+  it("gives Clip-It no link yet", () => {
+    render(<WorkSection />);
     expect(links(card("Clip-It"))).toHaveLength(0);
   });
 

@@ -14,8 +14,11 @@ describe("site content", () => {
     expect(MORE_WORK[0].action?.href).toBe("https://getscrib.com");
   });
 
-  it("gives linkables and Clip-It no link until their landing pages exist", () => {
-    expect(MORE_WORK[1].action).toBeUndefined();
+  it("links linkables to its landing page", () => {
+    expect(MORE_WORK[1].action?.href).toBe("https://linkables.app");
+  });
+
+  it("gives Clip-It no link until its store listing is added", () => {
     expect(MORE_WORK[2].action).toBeUndefined();
   });
 
