@@ -1,0 +1,14 @@
+# Runs from /srv/portfolio on the VPS. CI moves :master on every green push;
+# the server's update timer pulls it, so CI never connects to the server.
+name: portfolio
+
+services:
+  web:
+    image: ghcr.io/cydoentis/portfolio:master
+    restart: unless-stopped
+    # Docker's default json-file logs never rotate.
+    logging:
+      driver: local
+    ports:
+      # Loopback only: Docker-published ports bypass ufw.
+      - "127.0.0.1:8081:8080"
