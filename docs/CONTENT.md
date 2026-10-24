@@ -105,7 +105,6 @@ Header: "On the workbench."
 | Name | Description | Status |
 |---|---|---|
 | tinkery | A small terminal text editor: file tree, tabs, tree-sitter, LSP and a run panel. | in progress (lime) |
-| tugboat | Works my tickets while I'm away, and stops before the part that needs me. | in progress (lime) |
 | crowns | A strategy game you can finish in ten minutes. | prototype (orange) |
 
 ## 03 About
