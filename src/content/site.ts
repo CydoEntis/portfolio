@@ -37,6 +37,8 @@ export type Project = {
   description: string;
   tech: string;
   image?: string;
+  /** CSS object-position for the screenshot; the card crops it to fit. */
+  imagePosition?: string;
   icon?: string;
   /** Paid apps point at their landing page, never their source. */
   action?: Link;
@@ -103,6 +105,7 @@ export const MORE_WORK: Project[] = [
       "A Chrome extension that loads every ShopRite digital coupon in one click, checks each one actually saved, and can run on a schedule.",
     tech: "JavaScript · Chrome extension",
     image: "/projects/clip-it.webp",
+    imagePosition: "left center",
   },
 ];
 
