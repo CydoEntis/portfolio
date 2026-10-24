@@ -7,3 +7,8 @@ count.txt
 .env
 .nitro
 .tanstack
+
+.tugboat/tasks/
+.tugboat/trees/
+.tugboat/runs/
+.tugboat/report.md
