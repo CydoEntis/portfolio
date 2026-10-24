@@ -19,6 +19,6 @@ npm run check    # typecheck, build and tests
   section). `docs/design/portfolio.dc.html` shows it rendered; keep
   `support.js` beside it to open it.
 - **Sections:** one folder each under `src/features/`, with tests beside them.
-- **Images:** `public/projects/` and `public/about/`.
+- **Images:** `public/icons/` and `public/about/`.
 
 Built with React, Vite, TanStack Router and Tailwind CSS.

@@ -24,13 +24,14 @@ Vertical slices: each section lives in `src/features/<section>/` with its
 components and tests beside it. Site content lives in `src/content/site.ts`
 as typed data, copied from `docs/CONTENT.md`. Design tokens are CSS custom
 properties in `src/styles.css`; components use them through Tailwind, never
-hard-coded hex values. Images are in `public/projects/` and `public/about/`.
+hard-coded hex values. Images are in `public/icons/` and `public/about/`.
 
 ## Rules
 
 - Border radius is 0 everywhere except status dots.
 - The page is dark only. There is no theme toggle.
-- `prefers-reduced-motion` turns off the caret blink and the card lift.
+- `prefers-reduced-motion` turns off all motion: caret, floating icons, scroll
+  reveal and hover movement. Scroll reveal never hides what is already in view.
 - Every grid collapses to one column at phone width with no horizontal scroll.
 - Links that leave the site open in a new tab with `rel="noreferrer"`.
 - Comments say why, not what.
