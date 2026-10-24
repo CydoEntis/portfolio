@@ -61,7 +61,7 @@ Projects, in this order. Icons are in `public/icons/`.
 - Status: Open source · v1.2 (lime)
 - Description: A Snipping Tool workalike for Linux and Windows. Snip a region, a window or the whole screen, mark it up and blur what shouldn't be shared, or record the same area and trim it.
 - Tech: Python · PyQt6
-- Icon: the app's own 256px icon from the snipux repo, not the design's redraw
+- Icon: the corners-and-cursor mark, as the design draws it (`/icons/snipux.svg`)
 - Action: "GitHub" → https://github.com/CydoEntis/snipux
 
 **Clip-It**

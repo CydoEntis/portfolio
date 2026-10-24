@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
     description:
       "A Snipping Tool workalike for Linux and Windows. Snip a region, a window or the whole screen, mark it up and blur what shouldn't be shared, or record the same area and trim it.",
     tech: "Python · PyQt6",
-    icon: "/icons/snipux.webp",
+    icon: "/icons/snipux.svg",
     action: { label: "GitHub", href: "https://github.com/CydoEntis/snipux" },
   },
   {
