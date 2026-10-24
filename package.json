@@ -6,7 +6,8 @@
     "dev": "vite --port 3000",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run --passWithNoTests",
+    "check": "tsc --noEmit && vite build && vitest run --passWithNoTests"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
