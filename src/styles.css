@@ -64,36 +64,60 @@ section[id] {
   }
 }
 
-/* The design allows exactly two motions: the hero caret and the card lift.
-   Both opt in through these classes so this one block can turn them off. */
 .motion-caret {
   animation: caret-blink 1.1s steps(1) infinite;
 }
 
-.motion-lift {
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+/* Hero icons bob in place. Each sets --rot (its resting tilt), --lift,
+   --dur and --delay, so one keyframe serves all six. */
+@keyframes float {
+  from {
+    transform: rotate(var(--rot)) translateY(0);
+  }
+  to {
+    transform: rotate(var(--rot)) translateY(calc(var(--lift) * -1));
+  }
 }
 
-/* Done here rather than with a translate utility: Tailwind's translate-* sets
-   the separate `translate` property, which the reduced-motion reset below
-   would not cover. */
-.motion-lift:hover {
-  transform: translateY(-4px);
+.motion-float {
+  transform: rotate(var(--rot));
+  animation: float var(--dur) ease-in-out var(--delay) infinite alternate;
+}
+
+.float-icon {
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-icon {
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Hover movement is opt-in so reduced motion never sees it, even instantly. */
+@media (prefers-reduced-motion: no-preference) {
+  .float-icon:hover {
+    transform: scale(1.08) rotate(-3deg);
+  }
+  .group:hover .card-icon {
+    transform: translateY(-3px) rotate(-4deg) scale(1.06);
+  }
+  .group:hover .card-arrow {
+    transform: translateX(4px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .motion-caret {
-    animation: none;
-  }
-  .motion-lift,
-  .motion-lift:hover {
-    transform: none !important;
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

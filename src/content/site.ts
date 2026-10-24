@@ -1,13 +1,18 @@
 // Copied from docs/CONTENT.md. Change the words there first, then here.
-
-// The contact link hides if this is ever emptied.
-export const EMAIL = "cydoentis@gmail.com";
+// The design's copy rule: no em dashes.
 
 export const LINKS = {
   github: "https://github.com/CydoEntis",
   linkedin: "https://www.linkedin.com/in/cody-stine-dev/",
   resume: "/resume.pdf",
 } as const;
+
+/**
+ * Web3Forms access key for the contact form. It is meant to sit in public
+ * page code: it can only send mail to the inbox it was made for. The form
+ * hides while this is empty.
+ */
+export const CONTACT_FORM_KEY = "";
 
 export const IDENTITY = {
   name: "Cody Stine",
@@ -24,8 +29,8 @@ export const IDENTITY = {
   ],
 } as const;
 
-/** Lime marks something people can use today; orange marks work in progress. */
-export type Tone = "lime" | "orange";
+/** Lime: open source or free. Orange: in development. Grey: coming soon. */
+export type Tone = "lime" | "orange" | "grey";
 
 export type Link = { label: string; href: string };
 
@@ -36,20 +41,19 @@ export type Project = {
   tone: Tone;
   description: string;
   tech: string;
-  image?: string;
-  /** CSS object-position for the screenshot; the card crops it to fit. */
-  imagePosition?: string;
-  icon?: string;
+  icon: string;
+  /** Pixel-art icons stay sharp when scaled up. */
+  pixelated?: boolean;
   /** Paid apps point at their landing page, never their source. */
   action?: Link;
 };
 
 export const WORK = {
   heading: "Things I've shipped.",
-  note: "Browser, desktop, terminal, or game engine — wherever the idea runs best.",
+  note: "Browser, desktop, terminal, or game engine. Wherever the idea runs best.",
 };
 
-export const FEATURED: Project[] = [
+export const PROJECTS: Project[] = [
   {
     name: "maitty",
     type: "TUI",
@@ -58,33 +62,8 @@ export const FEATURED: Project[] = [
     description:
       "Run Claude Code, Codex and other coding agents side by side. They keep working after you close the window, and maitty shows which ones need you when you're back.",
     tech: "Rust · Windows / macOS / Linux",
-    image: "/projects/maitty.gif",
-    action: { label: "View on GitHub", href: "https://github.com/CydoEntis/maitty" },
-  },
-  {
-    name: "snipux",
-    type: "Desktop",
-    status: "Open source · v1.2",
-    tone: "lime",
-    description:
-      "A Snipping Tool workalike for Linux and Windows. Snip a region, a window or the whole screen, mark it up and blur what shouldn't be shared, or record the same area and trim it.",
-    tech: "Python · PyQt6",
-    image: "/projects/snipux.webp",
-    action: { label: "View on GitHub", href: "https://github.com/CydoEntis/snipux" },
-  },
-];
-
-export const MORE_WORK: Project[] = [
-  {
-    name: "scrib",
-    type: "Desktop",
-    status: "In development",
-    tone: "orange",
-    description:
-      "A fast, local-first desktop notebook that understands what you write: lists, running totals and unit conversions, all in plain text.",
-    tech: "Tauri · React · TypeScript",
-    image: "/projects/scrib.webp",
-    action: { label: "Visit site", href: "https://getscrib.com" },
+    icon: "/icons/maitty.webp",
+    action: { label: "GitHub", href: "https://github.com/CydoEntis/maitty" },
   },
   {
     name: "linkables",
@@ -94,20 +73,55 @@ export const MORE_WORK: Project[] = [
     description:
       "Save any link in seconds, find it later from any device, and share it when you need to.",
     tech: "React · Hono · Postgres",
-    icon: "/projects/linkables-icon.png",
+    icon: "/icons/linkables.webp",
     action: { label: "Visit site", href: "https://linkables.app" },
   },
   {
+    name: "scrib",
+    type: "Desktop",
+    status: "In development",
+    tone: "orange",
+    description:
+      "A fast, local-first desktop notebook that understands what you write: lists, running totals and unit conversions, all in plain text.",
+    tech: "Tauri · React · TypeScript",
+    icon: "/icons/scrib.webp",
+    action: { label: "Visit site", href: "https://getscrib.com" },
+  },
+  {
+    name: "snipux",
+    type: "Desktop",
+    status: "Open source · v1.2",
+    tone: "lime",
+    description:
+      "A Snipping Tool workalike for Linux and Windows. Snip a region, a window or the whole screen, mark it up and blur what shouldn't be shared, or record the same area and trim it.",
+    tech: "Python · PyQt6",
+    icon: "/icons/snipux.webp",
+    action: { label: "GitHub", href: "https://github.com/CydoEntis/snipux" },
+  },
+  {
     name: "Clip-It",
-    type: "Browser extension",
+    type: "Extension",
     status: "Free",
     tone: "lime",
     description:
       "A Chrome extension that loads every ShopRite digital coupon in one click, checks each one actually saved, and can run on a schedule.",
     tech: "JavaScript · Chrome extension",
-    image: "/projects/clip-it.webp",
-    imagePosition: "left center",
-    action: { label: "Add to Chrome", href: "https://chromewebstore.google.com/detail/clip-it-digital-coupon-lo/eholcdgbgoljfmjkidhmmiabdcpigaai" },
+    icon: "/icons/clip-it.webp",
+    action: {
+      label: "Add to Chrome",
+      href: "https://chromewebstore.google.com/detail/clip-it-digital-coupon-lo/eholcdgbgoljfmjkidhmmiabdcpigaai",
+    },
+  },
+  {
+    name: "Reign of Crowns",
+    type: "Game",
+    status: "Coming soon",
+    tone: "grey",
+    description:
+      "An MMORTS 4X you play free in your browser. Build an army, grow your castle and ally with other players to capture the 3 crowns before the season ends.",
+    tech: "In the works",
+    icon: "/icons/reign-of-crowns.png",
+    pixelated: true,
   },
 ];
 
@@ -177,40 +191,17 @@ export const EARLIER_WORK: EarlierProject[] = [
 ];
 
 export const STATEMENT = {
-  lead: "I like building useful software regardless of where it runs",
+  lead: "I like building useful software regardless of where it runs,",
   clause: "browser, desktop, terminal, or game engine.",
 };
-
-export type WorkbenchItem = {
-  name: string;
-  description: string;
-  status: string;
-  tone: Tone;
-};
-
-export const WORKBENCH: WorkbenchItem[] = [
-  {
-    name: "tinkery",
-    description:
-      "A small terminal text editor: file tree, tabs, tree-sitter, LSP and a run panel.",
-    status: "in progress",
-    tone: "lime",
-  },
-  {
-    name: "crowns",
-    description: "A strategy game you can finish in ten minutes.",
-    status: "prototype",
-    tone: "orange",
-  },
-];
 
 export const ABOUT = {
   heading: "Hi, I'm Cody.",
   image: "/about/cody-chief.webp",
-  imageAlt: "Illustration of Cody with his dog Chief on his shoulder",
+  imageAlt: "Illustration of Cody with Chief on his shoulders",
   paragraphs: [
     "I'm a software developer who likes turning ideas into working software. I build across web, desktop, terminal applications, developer tools, and games.",
-    "I care about simple interfaces, useful products, and understanding how things work under the hood. I'd rather pick the right tool for the job than stay locked into one stack — so I experiment a lot.",
+    "I care about simple interfaces, useful products, and understanding how things work under the hood. I'd rather pick the right tool for the job than stay locked into one stack, so I experiment a lot.",
   ],
   // Rendered separately so "Chief" can take the brighter text colour.
   closing: {
@@ -220,36 +211,46 @@ export const ABOUT = {
   },
 };
 
-export type Role = {
+export type Entry = {
   title: string;
   organisation: string;
   dates: string;
   href?: string;
-  summary?: string;
-  points?: string[];
+  current?: boolean;
 };
 
-export const EXPERIENCE: Role[] = [
+export const WORK_HISTORY: Entry[] = [
   {
     title: "Full Stack Developer",
     organisation: "Drive Smart",
-    dates: "Apr 2023 — Aug 2024",
+    dates: "Apr 2023 – Present",
     href: "https://www.drivesmart.auto",
-  },
-  {
-    title: "B.S. Software Engineering",
-    organisation: "Western Governors University",
-    dates: "Sep 2021 — May 2023",
+    current: true,
   },
   {
     title: "Software Engineer Intern",
     organisation: "Bay Master",
-    dates: "Jan 2021 — May 2022",
+    dates: "Jan 2021 – May 2022",
     href: "https://www.bay-master.com/",
+  },
+];
+
+export const EDUCATION: Entry[] = [
+  {
+    title: "B.S. Software Engineering",
+    organisation: "Western Governors University",
+    dates: "Sep 2021 – May 2023",
   },
   {
     title: "A.S. Computer Science",
     organisation: "Ocean County College",
-    dates: "Sep 2019 — Jan 2021",
+    dates: "Sep 2019 – Jan 2021",
   },
 ];
+
+export const CONTACT = {
+  heading: ["Want to build", "something?"],
+  sub: "Send a note and I'll get back to you.",
+  sent: "Thanks. Message sent. I'll reply soon.",
+  failed: "That didn't send. Please try again in a moment.",
+};

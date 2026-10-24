@@ -19,7 +19,7 @@ describe("About", () => {
 
   it("shows the illustration of Cody and Chief", () => {
     render(<About />);
-    const img = screen.getByAltText("Illustration of Cody with his dog Chief on his shoulder");
+    const img = screen.getByAltText("Illustration of Cody with Chief on his shoulders");
     expect(img.getAttribute("src")).toBe("/about/cody-chief.webp");
   });
 });
