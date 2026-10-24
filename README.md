@@ -49,7 +49,3 @@ npm run dev
 ```bash
 npm run build
 ```
-
-## Deployment
-
-Deployed via [ShipHound](https://github.com/CydoEntis/ShipHound) to a Linux VPS with Caddy reverse proxy.
