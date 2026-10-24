@@ -36,13 +36,13 @@ export default function Contact({ formKey = CONTACT_FORM_KEY }: { formKey?: stri
         )}
         <div data-reveal className="mt-10 flex flex-wrap gap-2.5">
           <a href={LINKS.github} target="_blank" rel="noreferrer" className={chip}>
-            GitHub ↗
+            GitHub <span aria-hidden>↗</span>
           </a>
           <a href={LINKS.linkedin} target="_blank" rel="noreferrer" className={chip}>
-            LinkedIn ↗
+            LinkedIn <span aria-hidden>↗</span>
           </a>
           <a href={LINKS.resume} download className={chip}>
-            Résumé.pdf ↓
+            Résumé.pdf <span aria-hidden>↓</span>
           </a>
         </div>
       </section>

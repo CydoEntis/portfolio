@@ -50,7 +50,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               rel="noreferrer"
               className="-mx-2 -my-1 px-2 py-1 text-sm font-semibold text-lime transition-colors duration-150 hover:bg-lime hover:text-bg"
             >
-              {project.action.label} <span className="card-arrow">→</span>
+              {project.action.label} <span aria-hidden className="card-arrow">→</span>
             </a>
           )}
         </div>

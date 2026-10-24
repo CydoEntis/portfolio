@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { CONTACT } from "@/content/site";
 
 const ENDPOINT = "https://api.web3forms.com/submit";
@@ -25,6 +25,13 @@ async function send(accessKey: string, form: HTMLFormElement): Promise<boolean> 
 
 export default function ContactForm({ accessKey }: { accessKey: string }) {
   const [status, setStatus] = useState<Status>("idle");
+  const sentRef = useRef<HTMLDivElement>(null);
+
+  // The form (and the focused button) is replaced on success, so focus moves
+  // to the confirmation; otherwise keyboard and screen-reader users lose their place.
+  useEffect(() => {
+    if (status === "sent") sentRef.current?.focus();
+  }, [status]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -32,17 +39,20 @@ export default function ContactForm({ accessKey }: { accessKey: string }) {
     try {
       setStatus((await send(accessKey, event.currentTarget)) ? "sent" : "failed");
     } catch (error) {
-      // A network failure is the visitor's to retry; the form says so.
-      if (!(error instanceof TypeError || error instanceof SyntaxError)) throw error;
       setStatus("failed");
+      // A network failure or an unreadable reply is the visitor's to retry;
+      // anything else is a bug and goes on to the top-level handler.
+      if (!(error instanceof TypeError || error instanceof SyntaxError)) throw error;
     }
   }
 
   if (status === "sent") {
     return (
       <div
+        ref={sentRef}
         role="status"
-        className="mt-8 flex max-w-[640px] items-center gap-3 border border-lime-dim p-5 text-[15px] text-text"
+        tabIndex={-1}
+        className="mt-8 flex max-w-[640px] items-center gap-3 border border-lime-dim p-5 text-[15px] text-text outline-none"
       >
         <span className="size-2 bg-lime" />
         {CONTACT.sent}
@@ -56,11 +66,19 @@ export default function ContactForm({ accessKey }: { accessKey: string }) {
       onSubmit={onSubmit}
       className="mt-8 grid max-w-[640px] grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-3"
     >
-      <input required name="name" aria-label="Name" placeholder="Name" className={`${field} h-12`} />
+      <input
+        required
+        name="name"
+        autoComplete="name"
+        aria-label="Name"
+        placeholder="Name"
+        className={`${field} h-12`}
+      />
       <input
         required
         type="email"
         name="email"
+        autoComplete="email"
         aria-label="Your email"
         placeholder="Your email"
         className={`${field} h-12`}
@@ -81,7 +99,13 @@ export default function ContactForm({ accessKey }: { accessKey: string }) {
           disabled={status === "sending"}
           className="h-12 cursor-pointer rounded-none border border-lime bg-transparent px-[22px] text-[15px] font-semibold text-lime transition-colors duration-150 hover:bg-lime hover:text-bg disabled:cursor-wait disabled:opacity-60"
         >
-          {status === "sending" ? "Sending…" : "Send message →"}
+          {status === "sending" ? (
+            "Sending…"
+          ) : (
+            <>
+              Send message <span aria-hidden>→</span>
+            </>
+          )}
         </button>
         {status === "failed" && (
           <p role="alert" className="m-0 text-sm text-orange">

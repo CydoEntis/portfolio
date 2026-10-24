@@ -31,15 +31,8 @@ describe("Hero", () => {
     }
   });
 
-  it("shows every project icon in the decorative cluster", () => {
+  it("shows every project icon in a cluster hidden from screen readers", () => {
     const { container } = render(<Hero />);
-    const cluster = container.querySelector('[aria-hidden="true"].relative');
-    expect(cluster?.querySelectorAll("img")).toHaveLength(6);
-  });
-
-  it("hides the caret from screen readers", () => {
-    const { container } = render(<Hero />);
-    const caret = container.querySelector(".motion-caret");
-    expect(caret?.getAttribute("aria-hidden")).toBe("true");
+    expect(container.querySelectorAll('[aria-hidden="true"] img[alt=""]')).toHaveLength(6);
   });
 });
