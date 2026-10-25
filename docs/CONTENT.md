@@ -40,7 +40,7 @@ Projects, in this order. Icons are in `public/icons/`.
 - Status: Open source · v0.42 (lime)
 - Description: Run Claude Code, Codex and other coding agents side by side. They keep working after you close the window, and maitty shows which ones need you when you're back.
 - Tech: Rust · Windows / macOS / Linux (the design says React; maitty is Rust)
-- Action: "GitHub" → https://github.com/CydoEntis/maitty
+- Action: "Visit site" → https://maitty.app
 
 **linkables**
 - Type: Web app
@@ -62,7 +62,7 @@ Projects, in this order. Icons are in `public/icons/`.
 - Description: A Snipping Tool workalike for Linux and Windows. Snip a region, a window or the whole screen, mark it up and blur what shouldn't be shared, or record the same area and trim it.
 - Tech: Python · PyQt6
 - Icon: the corners-and-cursor mark, as the design draws it (`/icons/snipux.svg`)
-- Action: "GitHub" → https://github.com/CydoEntis/snipux
+- Action: "Visit site" → https://snipux.com
 
 **Clip-It**
 - Type: Extension

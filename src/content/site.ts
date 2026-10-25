@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
       "Run Claude Code, Codex and other coding agents side by side. They keep working after you close the window, and maitty shows which ones need you when you're back.",
     tech: "Rust · Windows / macOS / Linux",
     icon: "/icons/maitty.webp",
-    action: { label: "GitHub", href: "https://github.com/CydoEntis/maitty" },
+    action: { label: "Visit site", href: "https://maitty.app" },
   },
   {
     name: "linkables",
@@ -96,7 +96,7 @@ export const PROJECTS: Project[] = [
       "A Snipping Tool workalike for Linux and Windows. Snip a region, a window or the whole screen, mark it up and blur what shouldn't be shared, or record the same area and trim it.",
     tech: "Python · PyQt6",
     icon: "/icons/snipux.svg",
-    action: { label: "GitHub", href: "https://github.com/CydoEntis/snipux" },
+    action: { label: "Visit site", href: "https://snipux.com" },
   },
   {
     name: "Clip-It",

@@ -26,12 +26,16 @@ describe("WorkSection", () => {
     expect(links(card("Reign of Crowns"))).toHaveLength(0);
   });
 
-  it("links the open-source projects to their GitHub repos in a new tab", () => {
+  it("links maitty and snipux to their sites in a new tab", () => {
     render(<WorkSection />);
-    for (const name of ["maitty", "snipux"]) {
+    for (const [name, href] of [
+      ["maitty", "https://maitty.app"],
+      ["snipux", "https://snipux.com"],
+    ]) {
       const [link, ...rest] = links(card(name));
       expect(rest).toHaveLength(0);
-      expect(link.getAttribute("href")).toBe(`https://github.com/CydoEntis/${name}`);
+      expect(link.textContent).toContain("Visit site");
+      expect(link.getAttribute("href")).toBe(href);
       expect(link.getAttribute("target")).toBe("_blank");
     }
   });
